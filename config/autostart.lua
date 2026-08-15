@@ -1,0 +1,61 @@
+----------------------------------
+------ AUTOSTART ------
+----------------------------------
+
+-- Autostart necessary processes (like notifications daemons, status bars, etc.)
+-- Or execute your favorite apps at launch like this:
+
+hl.on("hyprland.start", function()
+
+    hl.exec_cmd("touch /tmp/hyprland-start-fired")
+
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+
+    -- xwaylandvideobridge is like a compatibility tool for running X11/Xorg windows on Wayland
+    hl.exec_cmd("xwaylandvideobridge")
+
+    -- Disable middle click paste functionality to avoid accidental pasting
+    hl.exec_cmd("wl paste -p --watch wl copy -pc")
+
+    -- Persistent clipboard
+    hl.exec_cmd("wl-clip-persist --clipboard regular")
+
+    -- Start the Polkit agent
+    -- The system will start it automatically
+    -- hl.exec_cmd("/usr/libexec/hyprpolkitagent")
+
+    -- Wi-Fi Tray
+    hl.exec_cmd("nm-applet --indicator")
+
+    -- Wallpaper daemon
+    hl.exec_cmd("/usr/local/bin/swww-daemon")
+
+    -- Wallpaper Restorer
+    hl.exec_cmd("sleep 1 && /home/omodudu/.config/waybar/scripts/wallpaperSelect.sh --restore")
+
+
+    -- Last Wallpaper Reload
+    -- hl.exec_cmd("~/.config/hypr/scripts/load-last-wallpaper.sh")
+
+    -- Cursor change and size
+    hl.exec_cmd("hyprctl setcursor Moga-Cursor 24")
+
+    -- Clipboard
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+
+    -- Swaync is a notification daemon that displays notifications on Wayland
+    hl.exec_cmd("swaync")
+
+    -- Lock the screen when inactive
+    hl.exec_cmd("/home/omodudu/.nix-profile/bin/hypridle")
+
+    -- Waybar
+    hl.exec_cmd("/home/omodudu/.nix-profile/bin/waybar")
+
+    -- Keyboard Brightness Watcher Script
+    hl.exec_cmd("~/.config/swaync/scripts/kbd_watcher.sh")
+    hl.exec_cmd("~/.config/swaync/scripts/mic_watcher.sh")
+
+end)
