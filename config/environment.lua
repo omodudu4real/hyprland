@@ -6,6 +6,13 @@
 
 
 -- Environments
+-- hl.env(
+--     "XDG_DATA_DIRS",
+--     "$HOME/.local/share:$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share"
+-- )
+
+
+-- Environments used because of Caelestia and hyprland
 hl.env(
     "XDG_DATA_DIRS",
     "$HOME/.local/share:$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share"
@@ -18,7 +25,7 @@ hl.env(
 
 
 -- Force the cursor theme and size
-hl.env("XCURSOR_THEME", "Moga-Cursor")
+hl.env("XCURSOR_THEME", "Moga-Neon-Cyan")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "Moga-Cursor")
 hl.env("HYPRCURSOR_SIZE", "24")

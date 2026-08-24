@@ -60,7 +60,6 @@ hl.window_rule({
     match = {
         class = "yad",
     },
-    move = "55 60",
     float = true,
     border_size = 2,
     opacity = "0.9 0.7",
@@ -168,4 +167,14 @@ hl.window_rule({
     border_size = 2,
     size = "400 400",
     move = "1380 60",
+})
+
+-- Keep the Chrome screen-sharing indicator out of the visible screen
+hl.window_rule({
+    name = "hide-screen-sharing-indicator",
+    match = {
+        title = ".* is sharing your screen\\.",
+    },
+    float = true,
+    move = "2500 40",
 })

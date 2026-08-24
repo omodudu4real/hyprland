@@ -13,15 +13,21 @@ local mainMod = "SUPER"
 ----------------------------------------------------------
 ------         APPS          ------
 ----------------------------------------------------------
+---
+----- Caelestia APPS Launcher
+-- Caelestia App Launcher
+hl.bind("SUPER + SUPER_L", hl.dsp.global("caelestia:launcher"), { release = true })
 
 -- Clipboard History
 hl.bind(mainMod .. " + ALT + " .. "V", hl.dsp.exec_cmd(vars.clipboard))
 
+-- commented out because of caelestia
 -- Wallpaper Switcher
-hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd(vars.wallpapersSelector))
+-- hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd(vars.wallpapersSelector))
 
+-- commented out because of caelestia
 -- Theme Switcher
-hl.bind(mainMod .. " + " .. "T", hl.dsp.exec_cmd(vars.themeSelector))
+-- hl.bind(mainMod .. " + " .. "T", hl.dsp.exec_cmd(vars.themeSelector))
 
 -- Launch default applications
 hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd(vars.terminal))
@@ -29,17 +35,24 @@ hl.bind(mainMod .. " + " .. "RETURN", hl.dsp.exec_cmd(vars.terminal))
 -- WlogOut
 hl.bind(mainMod .. " + " .. "M", hl.dsp.exec_cmd(vars.wlogout))
 
--- Launch hyprlock
-hl.bind(mainMod .. " + " .. "L",
-    hl.dsp.exec_cmd(vars.hyprlock))
+-- Launch hyprlock comment out because i want to use caelestia lock
+-- hl.bind(mainMod .. " + " .. "L",
+--     hl.dsp.exec_cmd(vars.hyprlock))
+
+-- Caelestia lock
+-- Launch Caelestia lock screen
+-- Launch Caelestia lock screen
+    hl.bind(mainMod .. " + " .. "L",
+        hl.dsp.exec_cmd(vars.caelestiaLock))
 
 -- Launch fileManager
 hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd(vars.fileManager))
 
+-- commented out because i want to use caelestia
 -- Menu launcher
-hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd(vars.menu))
+-- hl.bind(mainMod .. " + " .. "SPACE", hl.dsp.exec_cmd(vars.menu))
 
--- Zen Browser
+-- Launch Zen Browser
 hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd(vars.browser))
 
 -- Note
@@ -53,12 +66,15 @@ hl.bind(mainMod .. " + " .. "C", hl.dsp.exec_cmd(vars.code))
 hl.bind(mainMod .. " + ALT + " .. "C", hl.dsp.exec_cmd(vars.calculator))
 
 
--- Waybar Launcher
-hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd(vars.waybar))
+-- Waybar Launcher ## since i am using caelestia now i will comment this out
+-- hl.bind(mainMod .. " + " .. "R", hl.dsp.exec_cmd(vars.waybar))
 
 
--- Emoji Launcher
+-- Rofi Emoji Launcher
 hl.bind(mainMod .. " + " .. "PERIOD", hl.dsp.exec_cmd(vars.rofimoji))
+
+-- Caelestia Emoji Launcher
+hl.bind(mainMod .. " + ALT + PERIOD", hl.dsp.exec_cmd("bash -lc 'caelestia emoji -p'"))
 
 
 ----------------------------------------------------------
@@ -82,15 +98,24 @@ hl.bind(mainMod .. " + " .. "J", hl.dsp.layout("togglesplit"))
 
 
 ----------------------------------------------------------
-------      SCREENSHOT       ------
+------      HYPRSHOT SCREENSHOT       ------
 ----------------------------------------------------------
 local hyprshot = "/home/omodudu/.nix-profile/bin/hyprshot"
 
 hl.bind(mainMod .. " + " .. "PRINT", hl.dsp.exec_cmd(hyprshot .. " -m output"))
 
-hl.bind(mainMod .. " + ALT + " .. "PRINT", hl.dsp.exec_cmd(hyprshot .. " -m window"))
+-- hl.bind(mainMod .. " + ALT + " .. "PRINT", hl.dsp.exec_cmd(hyprshot .. " -m window"))
 
-hl.bind(mainMod .. " + CTRL + " .. "PRINT", hl.dsp.exec_cmd(hyprshot .. " -m region"))
+-- hl.bind(mainMod .. " + CTRL + " .. "PRINT", hl.dsp.exec_cmd(hyprshot .. " -m region"))
+
+
+----------------------------------------------------------
+------      CAELESTIA SCREENSHOT       ------
+----------------------------------------------------------
+
+hl.bind(mainMod .. " + ALT + " .. "PRINT", hl.dsp.global("caelestia:screenshot"))
+-- hl.bind(mainMod .. " + " .. "PRINT", hl.dsp.global("caelestia:screenshotClip"))
+-- hl.bind(mainMod .. " + CTRL + " .. "PRINT", hl.dsp.global("caelestia:screenshotFreeze"))
 
 ----------------------------------------------------------
 ------      MOVE FOCUS      ------
@@ -194,9 +219,21 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ to
 
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
 
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"))
+-- Caelestia will handle brightness osd
 
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"))
+-- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"))
+
+-- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"))
+
+-- Caelestia brightness osd
+-- increase brightness osd
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("bash -lc '/home/omodudu/.config/caelestia/scripts/brightness.sh up'"))
+
+
+-- decrease brightness osd
+
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("bash -lc '/home/omodudu/.config/caelestia/scripts/brightness.sh down'"))
+
 
 
 ----------------------------------------------------------
@@ -214,22 +251,26 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 
 ----------------------------------------------------------
 ------ SWAYOSD ------
-----------------------------------------------------------
+---------------------------------------------------------- this is disabled because caelestia was able to handle it
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("~/.config/swaync/scripts/audio.sh --inc"))
+-- Notification Visual for Volume increase
+-- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("~/.config/swaync/scripts/audio.sh --inc"))
 
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("~/.config/swaync/scripts/audio.sh --dec"))
+-- Notification Visual for volume Decrease
+-- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("~/.config/swaync/scripts/audio.sh --dec"))
 
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.config/swaync/scripts/audio.sh --mute"))
+-- Notification Visual for Volume Mute
+-- hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.config/swaync/scripts/audio.sh --mute"))
 
 
 ----------------------------------------------------------
 ------ MONITOR BRIGHTNESS ------
-----------------------------------------------------------
+---------------------------------------------------------- This is handled by caelestia so it will be commented out
+--  Brightness increase
+-- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.config/swaync/scripts/brightness.sh --inc"))
 
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/.config/swaync/scripts/brightness.sh --inc"))
-
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/swaync/scripts/brightness.sh --dec"))
+-- Brightness decrease
+-- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/swaync/scripts/brightness.sh --dec"))
 
 
 ----------------------------------------------------------

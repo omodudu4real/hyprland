@@ -7,10 +7,10 @@ local colors = require("colors.colors")
 -- General
 hl.config({
     general = {
-        gaps_in = 6,
-        gaps_out = 12,
+        gaps_in = 10,
+        gaps_out = 20,
 
-        border_size = 4,
+        border_size = 3,
 
         col = {
             active_border = {
@@ -35,7 +35,7 @@ hl.config({
 -- Decoration
 hl.config({
     decoration = {
-        rounding = 10,
+        rounding = 20,
         rounding_power = 12,
 
         active_opacity = 1.0,
