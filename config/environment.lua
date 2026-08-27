@@ -27,7 +27,7 @@ hl.env(
 -- Force the cursor theme and size
 hl.env("XCURSOR_THEME", "Moga-Neon-Cyan")
 hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_THEME", "Moga-Cursor")
+hl.env("HYPRCURSOR_THEME", "Moga-Neon-Cyan")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("QT_QUICK_CONTROLS_STYLE", "org.hyprland.style")
 
@@ -53,6 +53,7 @@ hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+
 
 
 -- Qt variables

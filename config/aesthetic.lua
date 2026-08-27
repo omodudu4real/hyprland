@@ -7,8 +7,8 @@ local colors = require("colors.colors")
 -- General
 hl.config({
     general = {
-        gaps_in = 10,
-        gaps_out = 20,
+        gaps_in = 12,
+        gaps_out = 6,
 
         border_size = 3,
 
@@ -35,8 +35,8 @@ hl.config({
 -- Decoration
 hl.config({
     decoration = {
-        rounding = 20,
-        rounding_power = 12,
+        rounding = 12,
+        rounding_power = 6,
 
         active_opacity = 1.0,
         inactive_opacity = 0.9,
@@ -58,5 +58,13 @@ hl.config({
             ignore_opacity = true,
             vibrancy = 0.1696,
         },
+    },
+})
+
+-- Cursor
+hl.config({
+    cursor = {
+        enable_hyprcursor = false,
+        sync_gsettings_theme = true,
     },
 })

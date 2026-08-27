@@ -7,8 +7,8 @@
 
 hl.on("hyprland.start", function()
 
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
     -- xwaylandvideobridge is like a compatibility tool for running X11/Xorg windows on Wayland
     hl.exec_cmd("xwaylandvideobridge")

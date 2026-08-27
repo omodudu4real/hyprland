@@ -15,7 +15,7 @@ local M = {
 
 
     rofimoji = '/home/omodudu/.nix-profile/bin/rofimoji --selector rofi --selector-args "-theme /home/omodudu/.config/rofi/themes/emoji-picker.rasi" --clipboarder wl-copy --action clipboard --no-frecency --hidden-descriptions',
-    wlogout = '/usr/bin/wlogout -b 5',
+    wlogout = '/usr/bin/wlogout -b 4',
     themeSelector = '~/.config/waybar/scripts/themeSelector.sh',
     wallpapersSelector = "/home/omodudu/.config/waybar/scripts/wallpaperSelect.sh",
     clipboard = "~/.config/waybar/scripts/clipManager.sh",
