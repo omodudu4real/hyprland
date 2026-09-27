@@ -4,15 +4,10 @@
 
 -- See https://wiki.hypr.land/Configuring/Environment-variables/
 
+-- Environment paths
+-- Keep Nix and local binaries available to applications
+-- launched by Hyprland.
 
--- Environments
--- hl.env(
---     "XDG_DATA_DIRS",
---     "$HOME/.local/share:$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share"
--- )
-
-
--- Environments used because of Caelestia and hyprland
 hl.env(
     "XDG_DATA_DIRS",
     "$HOME/.local/share:$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share"
@@ -25,14 +20,18 @@ hl.env(
 
 
 -- Force the cursor theme and size
+
 hl.env("XCURSOR_THEME", "Moga-Neon-Cyan")
 hl.env("XCURSOR_SIZE", "24")
+
 hl.env("HYPRCURSOR_THEME", "Moga-Neon-Cyan")
 hl.env("HYPRCURSOR_SIZE", "24")
+
 hl.env("QT_QUICK_CONTROLS_STYLE", "org.hyprland.style")
 
 
 -- Toolkit backend
+
 -- GTK: Use Wayland if available; if not, try X11 and then any other GDK backend.
 hl.env("GDK_BACKEND", "wayland,x11,*")
 
@@ -50,10 +49,10 @@ hl.env("CLUTTER_BACKEND", "wayland")
 
 
 -- XDG
+
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
-
 
 
 -- Qt variables

@@ -10,7 +10,7 @@ local M = {
     -- comment out because i want to use caelestia lock
     -- hyprlock = "/home/omodudu/.nix-profile/bin/hyprlock --config /home/omodudu/.config/hypr/hyprlock/hyprlock.conf",
 
-    -- Caelestia lock
+    -- -- Caelestia lock
     caelestiaLock = "/home/omodudu/.nix-profile/bin/caelestia-shell ipc call lock lock",
 
 

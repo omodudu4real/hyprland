@@ -9,7 +9,7 @@ hl.config({
         enabled = true,
 
         -- Default curves, see https://wiki.hypr.land/Configuring/Animations/--curves
-        --        NAME,           X0,   Y0,   X1,   Y1
+        --        NAME,  X0,  Y0,  X1,  Y1
         bezier = {
             {
                 name = "easeOutQuint",
@@ -49,7 +49,7 @@ hl.config({
         },
 
         -- Default animations, see https://wiki.hypr.land/Configuring/Animations/
-        --           NAME,          ONOFF, SPEED, CURVE,        [STYLE]
+        --           NAME,  ON OFF, SPEED, CURVE, [STYLE]
         animation = {
             {
                 name = "global",
